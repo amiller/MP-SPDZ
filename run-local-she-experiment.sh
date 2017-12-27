@@ -1,17 +1,19 @@
 #!/bin/bash
 
-# Assumes SPDZ-2 has been built with CONFIG-mascot
+# Assumes SPDZ-2 has been built with CONFIG-she
+
+./compile.py tutorial
 
 # For 2 nodes
-CMD_0="./ot-offline.x -N 2 -p 0 -c; bash"
-CMD_1="echo '0'; bash"
-CMD_2="./ot-offline.x -N 2 -p 1 -c; bash"
+CMD_0="./spdz2-offline.x -N 2 -p 0; bash"
+CMD_1="./spdz2-offline.x -N 2 -p 1; bash"
+CMD_2="echo '2'; bash"
 CMD_3="echo '3'; bash"
 
-# For 3 nodes (not working!)
-CMD_0="./ot-offline.x -N 3 -p 0 -c; bash"
-CMD_1="./ot-offline.x -N 3 -p 1 -c; bash"
-CMD_2="./ot-offline.x -N 3 -p 2 -c; bash"
+# For 3 nodes
+CMD_0="./spdz2-offline.x -N 3 -p 0; bash"
+CMD_1="./spdz2-offline.x -N 3 -p 1; bash"
+CMD_2="./spdz2-offline.x -N 3 -p 2; bash"
 CMD_3="echo '3'; bash"
 
 # Layout for 4 panels in TMUX

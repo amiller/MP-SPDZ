@@ -2,6 +2,8 @@
 
 ROOT = .
 
+USE_NTL=1
+
 OPTIM= -O3
 #PROF = -pg
 #DEBUG = -DDEBUG
@@ -11,7 +13,7 @@ OPTIM= -O3
 PREP_DIR = '-DPREP_DIR="Player-Data/"'
 
 # set for 128-bit GF(2^n) and/or OT preprocessing
-USE_GF2N_LONG = 1
+#USE_GF2N_LONG = 1
 
 # set to -march=<architecture> for optimization
 # AVX2 support (Haswell or later) changes the bit matrix transpose
@@ -23,7 +25,7 @@ endif
 
 # MAX_MOD_SZ must be at least ceil(len(p)/len(word))
 # Default is 2, which suffices for 128-bit p
-# MOD = -DMAX_MOD_SZ=2
+MOD = -DMAX_MOD_SZ=6
 
 LDLIBS = -lmpirxx -lmpir -lsodium $(MY_LDLIBS) -lm -lpthread 
 
